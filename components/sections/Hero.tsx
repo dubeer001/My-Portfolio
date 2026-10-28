@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Download, Send } from "lucide-react"
+import { FolderOpen, Send } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -20,16 +20,18 @@ export default function Hero() {
             <p className="text-primary font-medium mb-2">Hello, I'm</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Dubeer ul Hassan</h1>
             <h2 className="text-2xl md:text-3xl text-muted-foreground font-medium mb-6">
-              Web Developer | BCS Student | Freelancer
+              MERN Stack & React.js Developer
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-              I am a passionate BCS student and aspiring web developer focused on building user-friendly and responsive
-              web applications. I am committed to continuous learning and growth in the field of software development.
+              I build fast, responsive websites and full-stack web apps with React.js, Node.js, Express.js and MongoDB,
+              and I automate business tasks with AI tools like n8n and Ollama.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="gap-2">
-                <Download size={18} />
-                Download Resume
+              <Button size="lg" className="gap-2" asChild>
+                <Link href="#projects">
+                  <FolderOpen size={18} />
+                  View My Work
+                </Link>
               </Button>
               <Button size="lg" variant="outline" className="gap-2" asChild>
                 <Link href="#contact">

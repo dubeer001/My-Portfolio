@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { Globe, Code, Smartphone, PenTool, Database, Bug, LayoutGrid, RefreshCw } from "lucide-react"
+import { Globe, Code, Bot, PenTool, Database, Bug, LayoutGrid, RefreshCw } from "lucide-react"
 
 export default function Services() {
   const services = [
@@ -26,10 +26,10 @@ export default function Services() {
       available: true,
     },
     {
-      title: "Mobile App Development",
-      description: "Cross-platform mobile applications built with React Native for both iOS and Android platforms.",
-      icon: <Smartphone className="h-10 w-10" />,
-      available: false,
+      title: "AI Automation",
+      description: "n8n workflows with local AI (Ollama) for email replies, inventory updates and other repetitive tasks.",
+      icon: <Bot className="h-10 w-10" />,
+      available: true,
     },
     {
       title: "UI/UX Design",

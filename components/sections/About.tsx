@@ -47,16 +47,16 @@ export default function About() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <h3 className="text-2xl font-bold mb-4">
-              I'm <span className="text-primary">Dubeer ul Hassan</span>, a Web Developer & BCS Student
+              I'm <span className="text-primary">Dubeer ul Hassan</span>, a MERN Stack Developer
             </h3>
             <p className="text-muted-foreground mb-6">
-              I'm a passionate web developer currently pursuing my Bachelor's degree in Computer Science at SZABIST
-              Islamabad. With a strong foundation in web technologies, I create seamless, user-friendly web experiences
-              that solve real-world problems.
+              I have a Bachelor's degree in Computer Science from SZABIST Islamabad (2025) and worked as a MERN Stack
+              Developer at Diligent Technologies, Islamabad. I build responsive websites and full-stack web apps with
+              React.js, Node.js, Express.js and MongoDB.
             </p>
             <p className="text-muted-foreground mb-6">
-              I am committed to continuous learning and growth in the field of software development. I'm constantly
-              adapting to new technologies to stay at the forefront of web development.
+              I also build AI automation workflows with n8n and locally run Ollama models, such as an email support
+              agent and a chat-based inventory manager, to help small businesses save time.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">

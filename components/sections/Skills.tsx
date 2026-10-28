@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
-import { Code, Database, Server, Globe, Palette, Smartphone, Figma, GitBranch } from "lucide-react"
+import { Code, Database, Server, Globe, Bot, GitBranch } from "lucide-react"
 
 export default function Skills() {
   const technicalSkills = [
@@ -22,42 +22,32 @@ export default function Skills() {
     {
       title: "Frontend Development",
       icon: <Code />,
-      skills: ["HTML5", "CSS3", "JavaScript", "React", "Next.js", "Tailwind CSS"],
+      skills: ["HTML5", "CSS3", "JavaScript (ES6+)", "React.js", "Next.js", "Tailwind CSS"],
     },
     {
       title: "Backend Development",
       icon: <Server />,
-      skills: ["Node.js", "Express.js", "REST APIs", "GraphQL", "Authentication"],
+      skills: ["Node.js", "Express.js", "REST APIs", "JWT Authentication"],
     },
     {
       title: "Database",
       icon: <Database />,
-      skills: ["MongoDB", "MySQL", "PostgreSQL", "Firebase", "Redis"],
+      skills: ["MongoDB", "Airtable"],
+    },
+    {
+      title: "AI & Automation",
+      icon: <Bot />,
+      skills: ["n8n Workflows", "Ollama (Local LLMs)", "Gmail API", "Airtable API"],
     },
     {
       title: "Web Technologies",
       icon: <Globe />,
-      skills: ["Responsive Design", "PWA", "SEO", "Web Performance", "Accessibility"],
+      skills: ["Responsive Design", "Mobile-First Layouts", "Basic SEO", "Web3Forms"],
     },
     {
-      title: "UI/UX Design",
-      icon: <Palette />,
-      skills: ["Wireframing", "Prototyping", "Color Theory", "Typography", "User Research"],
-    },
-    {
-      title: "Mobile Development",
-      icon: <Smartphone />,
-      skills: ["React Native", "Expo", "Mobile-First Design", "App Deployment"],
-    },
-    {
-      title: "Design Tools",
-      icon: <Figma />,
-      skills: ["Figma", "Adobe XD", "Photoshop", "Illustrator", "Sketch"],
-    },
-    {
-      title: "Version Control",
+      title: "Tools & Deployment",
       icon: <GitBranch />,
-      skills: ["Git", "GitHub", "GitLab", "Bitbucket", "CI/CD"],
+      skills: ["Git", "GitHub", "Vercel", "Photoshop", "Illustrator"],
     },
   ]
 
@@ -96,7 +86,7 @@ export default function Skills() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}

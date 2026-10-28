@@ -10,9 +10,9 @@ export default function Education() {
     {
       degree: "Bachelor of Science in Computer Science",
       institution: "SZABIST Islamabad",
-      duration: "2021 - Present",
+      duration: "2021 - 2025",
       description:
-        "Currently pursuing a Bachelor's degree in Computer Science with a focus on web development and software engineering.",
+        "Completed a Bachelor's degree in Computer Science with a focus on web development. Final year project: an AI Video Creation System through Chat Interaction.",
     },
     {
       degree: "High School Diploma",

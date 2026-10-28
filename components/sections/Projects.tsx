@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
@@ -9,86 +9,79 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ExternalLink, Github, Loader2 } from "lucide-react"
 import Link from "next/link"
 
-// This would be fetched from your MongoDB in a real implementation
 const projectsData = [
   {
     id: "1",
-    title: "E-Commerce Platform",
+    title: "Edusity University Website",
     description:
-      "A full-stack e-commerce platform with product management, cart functionality, and payment integration.",
-    image: "/images/projects/ecommerce.jpg", // Update this path
-    category: "fullstack",
-    technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+      "A responsive university website with a sticky navbar, image gallery, testimonials slider, video section and a working contact form.",
+    image: "/images/edusity.jpg",
+    category: "frontend",
+    technologies: ["React.js", "CSS3", "React Scroll", "Web3Forms"],
+    githubUrl: "https://github.com/dubeer001/Edusity",
+    liveUrl: "https://edusity-six-rust.vercel.app",
   },
   {
     id: "2",
-    title: "Task Management App",
+    title: "Medical Billing Management Tool",
     description:
-      "A productivity app for managing tasks with drag-and-drop functionality and team collaboration features.",
-    image: "/images/projects/taskmanager.jpg", // Update this path
-    category: "frontend",
-    technologies: ["React", "Redux", "Tailwind CSS", "Firebase"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+      "A full-stack billing app for clinics with role-based login, claims management, insurance tracking, invoices, document upload and a reports dashboard.",
+    image: "/images/medical-billing.svg",
+    category: "fullstack",
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB"],
+    githubUrl: "https://github.com/dubeer001/medical-billing-",
+    liveUrl: "",
   },
   {
     id: "3",
-    title: "Real-time Chat Application",
-    description: "A chat application with real-time messaging, user authentication, and message history.",
-    image: "/images/projects/chatapp.jpg", // Update this path
-    category: "fullstack",
-    technologies: ["React", "Socket.io", "Node.js", "MongoDB"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    title: "Personal Portfolio Website",
+    description:
+      "This website: a responsive portfolio with smooth animations and a dark mode, built to present my skills and projects.",
+    image: "/images/portfolio.jpg",
+    category: "frontend",
+    technologies: ["Next.js", "React.js", "Tailwind CSS", "Framer Motion"],
+    githubUrl: "https://github.com/dubeer001/My-Portfolio",
+    liveUrl: "https://my-portfolio-chi-ten-57.vercel.app",
   },
   {
     id: "4",
-    title: "Weather Dashboard",
-    description: "A weather application that displays current and forecasted weather data based on location.",
-    image: "/images/projects/weatherapp.jpg", // Update this path
+    title: "NewsMonkey News App",
+    description:
+      "A React news app that loads the latest headlines by category from NewsAPI, with infinite scrolling and a top loading bar.",
+    image: "/images/newsmonkey.svg",
     category: "frontend",
-    technologies: ["React", "OpenWeather API", "Chart.js", "Tailwind CSS"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    technologies: ["React.js", "React Router", "NewsAPI", "Infinite Scroll"],
+    githubUrl: "https://github.com/dubeer001/newsMonkey",
+    liveUrl: "",
   },
   {
     id: "5",
-    title: "Blog API",
+    title: "AI Email Support Agent",
     description:
-      "A RESTful API for a blog platform with authentication, post management, and commenting functionality.",
-    image: "/images/projects/blogapi.jpg", // Update this path
-    category: "backend",
-    technologies: ["Node.js", "Express", "MongoDB", "JWT", "Swagger"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+      "An n8n workflow that reads new Gmail messages, sorts them with a local AI model, drafts accurate replies and sends them in the same thread.",
+    image: "/images/email-agent.svg",
+    category: "automation",
+    technologies: ["n8n", "Ollama", "Gmail API"],
+    githubUrl: "",
+    liveUrl: "",
   },
   {
     id: "6",
-    title: "Portfolio Website",
-    description: "A responsive portfolio website to showcase projects and skills with dark mode support.",
-    image: "/images/projects/portfolio.jpg", // Update this path
-    category: "frontend",
-    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    title: "AI Inventory Manager",
+    description:
+      "Update stock with a chat or voice command like \"Update Brown Rice to 30 kg\". Ollama understands it, n8n handles the logic and Airtable saves it.",
+    image: "/images/inventory.svg",
+    category: "automation",
+    technologies: ["n8n", "Ollama", "Airtable"],
+    githubUrl: "",
+    liveUrl: "",
   },
 ]
 
 export default function Projects() {
-  const [projects, setProjects] = useState([])
-  const [loading, setLoading] = useState(true)
+  const projects = projectsData
+  const loading = false
   const [activeTab, setActiveTab] = useState("all")
-
-  // Simulate fetching data from API
-  useEffect(() => {
-    // In a real implementation, this would be an API call to your backend
-    setTimeout(() => {
-      setProjects(projectsData)
-      setLoading(false)
-    }, 1000)
-  }, [])
 
   const filteredProjects = activeTab === "all" ? projects : projects.filter((project) => project.category === activeTab)
 
@@ -118,11 +111,11 @@ export default function Projects() {
               <TabsTrigger value="frontend" onClick={() => setActiveTab("frontend")}>
                 Frontend
               </TabsTrigger>
-              <TabsTrigger value="backend" onClick={() => setActiveTab("backend")}>
-                Backend
-              </TabsTrigger>
               <TabsTrigger value="fullstack" onClick={() => setActiveTab("fullstack")}>
                 Full Stack
+              </TabsTrigger>
+              <TabsTrigger value="automation" onClick={() => setActiveTab("automation")}>
+                AI Automation
               </TabsTrigger>
             </TabsList>
           </div>
@@ -155,7 +148,7 @@ export default function Projects() {
             )}
           </TabsContent>
 
-          <TabsContent value="backend" className="mt-8">
+          <TabsContent value="automation" className="mt-8">
             {loading ? (
               <div className="flex justify-center items-center h-64">
                 <Loader2 className="h-8 w-8 animate-spin text-primary" />
@@ -215,25 +208,31 @@ function ProjectCard({ project, index }) {
             ))}
           </div>
         </CardContent>
-        <CardFooter className="p-6 pt-0 flex gap-4">
-          <Button variant="outline" size="sm" asChild>
-            <Link
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2"
-            >
-              <Github size={16} />
-              Code
-            </Link>
-          </Button>
-          <Button size="sm" asChild>
-            <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-              <ExternalLink size={16} />
-              Live Demo
-            </Link>
-          </Button>
-        </CardFooter>
+        {(project.githubUrl || project.liveUrl) && (
+          <CardFooter className="p-6 pt-0 flex gap-4">
+            {project.githubUrl && (
+              <Button variant="outline" size="sm" asChild>
+                <Link
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <Github size={16} />
+                  Code
+                </Link>
+              </Button>
+            )}
+            {project.liveUrl && (
+              <Button size="sm" asChild>
+                <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <ExternalLink size={16} />
+                  Live Demo
+                </Link>
+              </Button>
+            )}
+          </CardFooter>
+        )}
       </Card>
     </motion.div>
   )
